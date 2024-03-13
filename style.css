@@ -1,0 +1,21 @@
+h2.logo{
+    color: darkturquoise;
+}
+
+@keyframes colors{
+    from{
+        background-color: blue
+}
+to{
+    background-color: orange;
+}
+    }
+
+    html. body{
+        height: 100%
+    }
+
+    body{
+        animation: color blue
+    }
+    
