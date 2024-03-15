@@ -38,6 +38,19 @@ a {
     text-decoration: none;
 }
 
+/* ANIMATIONS */
+@keyframes slide-n {
+    from{
+        left: -50px;
+    }
+
+    to{
+        left: 0
+    }
+}
+
+
+/* GLOBAL CLASSES */
 .main-color {
     color: var(--main-color);
 }
@@ -65,20 +78,37 @@ header .logo a:active {
     color: var(--highlight-white);
 }
 
+header nav{
+    position: relative;
+    overflow: hidden;
+    width: 100px;
+    text-align: right;
+}
+
+header nav a::after{
+    content: 'hey';
+}
+
 /* NAV SPACING */
 header nav a:not(:last-child) {
     /* PSEUDO SELECTORS */
     margin-right: 15px;
 }
 
-/* header nav a:last-child {
-    PSEUDO SELECTORS
-    margin-right: 25px;
-} */
 
 header nav a:hover {
     /* UNDERLINE WHEN HOVERING OVER LINK */
-    text-decoration: underline;
+    /* text-decoration: underline; */
+}
+
+header a#work-link{
+    /* position: relative; */
+    position: absolute;
+    /* top: 0;
+    right: 0; */
+    /* bottom: 10px; */
+    left: -50px;
+    animation: slide-n .4s forwards;
 }
 
 /* FORMATTING IMAGE/TEXT */
@@ -186,6 +216,27 @@ main section p:hover {
 /* main section p:hover(even){
     background-color: var(--main-color);
 } */
+
+.chat-box{
+    position: fixed;
+    z-index: 100;
+    bottom: 25px;
+    right: 25px;
+}
+
+.chat-box button{
+    padding: 5px 7px;
+    background-color: rgba(50, 50, 50, .7);
+    color: var(--main-color);
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.chat-box button:hover{
+    background-color: rgba(50, 50, 50, 1);
+    color: var(--highlight-white);
+}
 
 footer {
     display: flex;
