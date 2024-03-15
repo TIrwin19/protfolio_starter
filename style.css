@@ -71,6 +71,10 @@ header {
 
 }
 
+/* header .logo{
+    position: relative
+} */
+
 
 
 /* TRIGGER THE LOGO TO CHANGE COLOR WHEN CLICKED */
@@ -78,37 +82,34 @@ header .logo a:active {
     color: var(--highlight-white);
 }
 
-header nav{
+header nav a{
     position: relative;
-    overflow: hidden;
-    width: 100px;
-    text-align: right;
+}
+/* TRENSITIONS ON AN ABSOLUTE ELEMENT USING A PSEUDO SELECTOR OF ::AFTER */
+header nav a::after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: none;
+    border-radius: 3px;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    transition: width 1s, background-color .5s;
 }
 
-header nav a::after{
-    content: 'hey';
+header nav a:hover::after{
+    width: 100%;
+    background-color: var(--main-color);
+
 }
+/* TRANSITION END */
 
 /* NAV SPACING */
 header nav a:not(:last-child) {
     /* PSEUDO SELECTORS */
     margin-right: 15px;
-}
-
-
-header nav a:hover {
-    /* UNDERLINE WHEN HOVERING OVER LINK */
-    /* text-decoration: underline; */
-}
-
-header a#work-link{
-    /* position: relative; */
-    position: absolute;
-    /* top: 0;
-    right: 0; */
-    /* bottom: 10px; */
-    left: -50px;
-    animation: slide-n .4s forwards;
 }
 
 /* FORMATTING IMAGE/TEXT */
@@ -189,14 +190,19 @@ h1.work-title {
     padding: 0 3%;
 }
 
+
+
 main {
     padding: 0 3%;
     flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px; 
 }
 
 main section {
     padding: 5px;
-    margin: 8px 0;
+    /* margin: 8px 0; */
     /* border: 2px solid #555; */
     background-color: var(--main-color);
     /* width: fit-content; */
@@ -211,6 +217,11 @@ main section:nth-child(even) {
 main section p:hover {
     background-color: var(--banner-color);
     color: var(--highlight-white);
+}
+
+main section.main-section{
+    grid-column: 1 / 4;
+    padding: 30px 15px;
 }
 
 /* main section p:hover(even){
@@ -243,7 +254,22 @@ footer {
     justify-content: space-between;
     /* margin: 0 7px; */
     padding: 20px 3%;
+    position: relative;
 }
+
+.abs{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* MEDIA QUERY / RESPONSIVE STYLES */
+@MEDIA (max-width: 768px) {
+    figure .hero-image {
+        max-width: 95%;
+    }
+}
+
 
 
 
@@ -260,13 +286,13 @@ footer {
 /* @keyframes colors{
     from{
         background-color: blue
-}
-to{
-    background-color: orange;
-}
     }
+    to{
+        background-color: orange;
+    }
+}
 
-     html. body{
+html. body{
         height: 100%
     }
 
