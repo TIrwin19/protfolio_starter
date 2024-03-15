@@ -1,8 +1,212 @@
-h2.logo{
-    color: darkturquoise;
+/* COLORS SAVED TO USE/CHANGE FROM ONE PLACE */
+:root {
+    --main-color: #52B1B3;
+    --banner-color: rgb(70, 70, 70);
+    --highlight-white: rgb(221, 221, 221);
+    --red: #932D3B;
 }
 
-@keyframes colors{
+/* RESETS */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    background-color: var(--highlight-white);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    /* background-image: url(assets/images/IMG_1815.jpg);
+    background-size: cover; 
+    background-attachment: fixed;  */
+}
+
+img {
+    max-width: 100%;
+}
+
+/* END RESETS */
+
+a {
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+.main-color {
+    color: var(--main-color);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--banner-color);
+    padding: 10px 3%;
+    /* 2=top/bottom left/right, 3=top, left/right, bottom, 4= clockwise */
+    /* position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%; */
+    /* flex-wrap: wrap; */
+
+}
+
+
+
+/* TRIGGER THE LOGO TO CHANGE COLOR WHEN CLICKED */
+header .logo a:active {
+    color: var(--highlight-white);
+}
+
+/* NAV SPACING */
+header nav a:not(:last-child) {
+    /* PSEUDO SELECTORS */
+    margin-right: 15px;
+}
+
+/* header nav a:last-child {
+    PSEUDO SELECTORS
+    margin-right: 25px;
+} */
+
+header nav a:hover {
+    /* UNDERLINE WHEN HOVERING OVER LINK */
+    text-decoration: underline;
+}
+
+/* FORMATTING IMAGE/TEXT */
+figure {
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 20px;
+}
+
+/* figure .hero{
+    background-image: url("assets/images/IMG_1815.jpg");
+} */
+
+figure .image-text {
+    margin: 3%;
+    font-size: 40pt;
+    color: var(--main-color);
+    background-color: var(--highlight-white);
+    width: fit-content;
+    border-radius: 5px;
+    padding: 0 5px;
+}
+
+figure .image-text p {
+    font-size: 20pt;
+    color: black;
+
+}
+
+figure .image-text a {
+    color: black;
+}
+
+figure .image-text a:hover {
+    color: var(--main-color);
+}
+
+figure .hero-image {
+    /* flex: 1; */
+    /* flex-grow: 1;
+    flex-shrink: 3;
+    flex-basis: 30%; */
+
+    /* max-width: 40%;
+    border-radius: 5px;
+    overflow: hidden; */
+
+    /* margin-bottom: 10px; */
+    /* height: calc(100%vh - 64px); */
+
+    height: 80vh;
+    width: 100%;
+    background-image: url(assets/images/IMG_1815.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* figure .hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    color: var(--banner-color);
+    background-color: rgb(162, 173, 184);
+} */
+
+/* WHY DOES THIS BREAK "MY WORK" WHEN COMMENTED*/
+/* figure .hero-text h1 {
+    margin-bottom: 7px;
+} */
+
+/* END FORMATING */
+
+h1.work-title {
+    padding: 0 3%;
+}
+
+main {
+    padding: 0 3%;
+    flex: 1;
+}
+
+main section {
+    padding: 5px;
+    margin: 8px 0;
+    /* border: 2px solid #555; */
+    background-color: var(--main-color);
+    /* width: fit-content; */
+}
+
+/* SELECT ONLY EVEN CHILDREN USING PSEUDO */
+main section:nth-child(even) {
+    background-color: #F2C75E;
+}
+
+/* TRIGGER A HOVER USING PSEUDO TO CHANGE BACKGROUND COLOR */
+main section p:hover {
+    background-color: var(--banner-color);
+    color: var(--highlight-white);
+}
+
+/* main section p:hover(even){
+    background-color: var(--main-color);
+} */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    /* margin: 0 7px; */
+    padding: 20px 3%;
+}
+
+
+
+
+
+
+
+
+/* h1.main-color{
+    padding-left: 3%;
+} */
+
+/* COLOR SHIFT EXAMPLE */
+/* @keyframes colors{
     from{
         background-color: blue
 }
@@ -11,11 +215,22 @@ to{
 }
     }
 
-    html. body{
+     html. body{
         height: 100%
     }
 
     body{
         animation: color blue
+        
     }
-    
+     */
+
+/* GRID EXAMPLE IN OFFICE HOURS 3/14/24 */
+/* main{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .span-s{
+        grid-column: 1/3;
+    } */
