@@ -196,7 +196,7 @@ main {
     padding: 0 3%;
     flex: 1;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(1fr, 4);
     gap: 15px; 
 }
 
